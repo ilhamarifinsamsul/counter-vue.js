@@ -1,7 +1,19 @@
-<script setup>
-import { ref } from "vue";
-
-const count = ref(0);
+<script>
+export default {
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  methods: {
+    increment() {
+      this.count++;
+    },
+    decrement() {
+      this.count--;
+    },
+  },
+};
 </script>
 
 <template>
@@ -10,8 +22,8 @@ const count = ref(0);
       <h1>Counter</h1>
       <span id="value">{{ count }}</span>
       <div>
-        <button id="decrement" @click="count--">-</button>
-        <button id="increment" @click="count++">+</button>
+        <button @click="decrement" id="decrement">-</button>
+        <button @click="increment" id="increment">+</button>
       </div>
     </div>
   </main>
